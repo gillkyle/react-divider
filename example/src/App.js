@@ -1,13 +1,9 @@
 import React, { Component } from 'react'
 
-import ExampleComponent from 'react-divider'
+import Divider from 'react-divider'
 
 export default class App extends Component {
-  render () {
-    return (
-      <div>
-        <ExampleComponent text='Modern React component module' />
-      </div>
-    )
+  render() {
+    return <Divider backgroundColor="red">This is the Text for it</Divider>
   }
 }

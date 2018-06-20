@@ -1,26 +1,34 @@
-/**
- * @class ExampleComponent
- */
-
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import styles from './styles.css'
-
-export default class ExampleComponent extends Component {
-  static propTypes = {
-    text: PropTypes.string
-  }
-
+class Divider extends Component {
   render() {
-    const {
-      text
-    } = this.props
+    const { children, backgroundColor, clipPath, header, footer } = this.props
+    if (header) {
+    }
 
     return (
-      <div className={styles.test}>
-        Example Component: {text}
+      <div
+        style={{
+          backgroundColor: backgroundColor,
+          background:
+            'linear-gradient(to bottom right, #2BE1F2 0%, #69B6F7 100%)',
+          clipPath: clipPath,
+          height: 250,
+          padding: '10%',
+        }}
+      >
+        {children}
       </div>
     )
   }
 }
+
+Divider.propTypes = {}
+
+Divider.defaultProps = {
+  backgroundColor: '#fff',
+  clipPath: 'polygon(0 0%, 100% 0%, 100% 60%, 0 100%)',
+}
+
+export default Divider
